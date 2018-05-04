@@ -26,7 +26,7 @@ vpath %.c src
 CFLAGS := -std=c11 -Wall -Wextra -pedantic
 CPPFLAGS := -I include
 
-SRCS := main.c file.c
+SRCS := main.c file.c generator-headers.c
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 
 PROGRAM := stdc.exe

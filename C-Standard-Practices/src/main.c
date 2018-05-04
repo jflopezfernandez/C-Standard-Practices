@@ -45,38 +45,14 @@
 #include "file.h"
 #endif // STD_C_FILE_H_
 
-static File createHeaderFile(const char *headerFileName) {
-    
-    // TODO: Move this into its own function
-    // Maybe getHeaderFileName(...) ? 
-    char filename[32] = { 0 };
-
-    strcpy(filename, headerFileName);
-    strcat(filename, ".h");
-
-    return createFile(filename);
-}
-
-static void CreateNewHeaderFile(const char *projectName, const char *headerFileName) {
-    File header = createHeaderFile(headerFileName);
-
-    fprintf(header, "\n");
-    fprintf(header, "#ifndef %s_%s_H_\n", projectName, headerFileName);
-    fprintf(header, "#define %s_%s_H_\n", projectName, headerFileName);
-    fprintf(header, "\n\n");
-    fprintf(header, "void TestFunction(void) {\n");
-    fprintf(header, "\tprintf(\"testing...\\n\");\n");
-    fprintf(header, "}\n");
-    fprintf(header, "\n");
-    fprintf(header, "#endif // %s_%s_H_\n", projectName, headerFileName);
-
-    CloseFile(&header);
-}
+#ifndef STD_C_GENERATOR_H_
+#include "generator.h"
+#endif // STD_C_GENERATOR_H_
 
 
 int main(void)
 {
-    const char *projectName = "TEST_PROJECT";
+    const char *projectName = "OpenGL_Subsystem";
 
     const char *modules[] = {
         "IO",
@@ -84,12 +60,14 @@ int main(void)
         "Math",
         "Error",
         "Time",
-        "OS"
+        "OS",
+        "Renderer",
+        "OpenGL"
     };
 
     for (int i = 0; i < 6; i++) {
         CreateNewHeaderFile(projectName, modules[i]);
     }
-    
+
     return EXIT_SUCCESS;
 }

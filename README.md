@@ -6,3 +6,10 @@ I've had this idea for a while because I see a lot of newcomers to C do things t
 In the spirit of giving credit where credit is due, I got this idea from [Jason Turner](https://twitter.com/lefticus) and his awesome [C++ Best Practices](https://github.com/lefticus/cppbestpractices) project, which I totally recommend everyone check out. I don't intend on rivaling that project's greatness, but I definitely want to show any newcomers who might stumble across this humble but proud project that the code they read and the code they write can be very different, due in no small part to the fact that most books on C were written before today's Computer Science freshmen were even born. :)
 
 Pull requests, comments, corrections, suggestions, and ideas are both welcome and wanted!
+
+## Best Practices
+
+1. Do not predeclare your loop counters
+2. Always check function values
+3. Always <b>read the documentation</b>
+4. Always <b>write</b> the documentation

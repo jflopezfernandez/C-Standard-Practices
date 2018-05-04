@@ -37,7 +37,7 @@ static void ValidateFileHandle(File file) {
 }
 
 File openFile(const char *filename, const char *mode) {
-	File newFile(filename, mode);
+	File newFile = fopen(filename, mode);
 
 	ValidateFileHandle(newFile);
 
@@ -51,7 +51,7 @@ File createFile(const char *filename) {
 // TODO: Create a macro or function to validate all file pointer parameters
 
 void CloseFile(File *fileHandle) {
-	if (FileHandleNull(file)) {
+	if (FileHandleNull(*fileHandle)) {
 		return;
 	}
 
@@ -61,5 +61,5 @@ void CloseFile(File *fileHandle) {
 		exit(EXIT_FAILURE);
 	}
 
-	*fileHandle == NULL;
+	*fileHandle = NULL;
 }

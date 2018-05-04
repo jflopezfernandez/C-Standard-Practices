@@ -29,7 +29,7 @@ CPPFLAGS := -I include
 SRCS := main.c file.c
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 
-PROGRAM := so.exe
+PROGRAM := stdc.exe
 
 .PHONY: all
 all: $(PROGRAM)
